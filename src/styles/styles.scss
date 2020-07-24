@@ -1,0 +1,362 @@
+$accent-color: #88a376;
+$black: #080808;
+$grey: #484848;
+$white: #f1f1f1;
+$ease-in-out-cubic: cubic-bezier(0.145, 0.045, 0.155, 1);
+$cubic-transition: 0.5s $ease-in-out-cubic;
+
+
+@font-face {
+    font-family: "Manrope";
+    src: url("../fonts/Manrope-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-display: swap;
+}
+  
+@font-face {
+    font-family: "Manrope";
+    src: url("../fonts/Manrope-SemiBold.woff2") format("woff2");
+    font-weight: 600;
+    font-display: swap;
+}
+  
+@font-face {
+    font-family: "Manrope";
+    src: url("../fonts/Manrope-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-display: swap;
+}
+
+html,
+body {
+  visibility: hidden;
+  font-family: "Manrope";
+  font-size: 16px;
+  background-color: $white;
+}
+
+::selection {
+  background: $accent-color;
+  color: $white;
+}
+
+::-moz-selection {
+  background: $accent-color;
+  color: $white;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: $grey;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  background-color: $grey;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 3.5px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #c09e80;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.header-cont {
+  width: 100%;
+}
+
+*:focus {
+  outline: none;
+}
+
+//Header
+header {
+    height: 80px;
+    width: 90%;
+    position: fixed;
+    top: 0px;
+    z-index: 20;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+  
+    .inner-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+  
+      .logo {
+        visibility: hidden;
+        cursor: pointer;
+      }
+  
+      .header-about {
+        visibility: hidden;
+
+        a {
+          text-decoration: none;
+          font-weight: 500;
+          letter-spacing: 1.5px;
+          color: $white;
+          cursor: pointer;
+          transition: 0.5s color $ease-in-out-cubic;
+          position: relative;
+
+          .alt{
+            color: $black;
+          }
+  
+          &:before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 1px;
+            left: 0;
+            bottom: 0;
+            visibility: hidden;
+            transition: width 0.5s ease, background 0.5s ease;
+          }
+          &:hover {
+            color: $white;
+            transition: 0.5s color $ease-in-out-cubic;
+
+            .alt{
+              color: $accent-color;
+            }
+          }
+          &:hover:before {
+            visibility: visible;
+            background: $white;
+            width: 100%;
+
+            .alt{
+              color: $accent-color;
+            }
+          }
+  
+          &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 0;
+            height: 1px;
+            background: $white;
+            transition: width 0.5s ease;
+
+            .alt{
+              color: $accent-color;
+            }
+          }
+  
+          &:hover:after {
+            background: transparent;
+            width: 100%;
+            transition: all 0s ease;
+          } 
+        } 
+      }
+
+      .header-alt {
+        a {
+          color: $black;
+  
+          &:hover {
+            color: $accent-color;
+          }
+
+          &:hover:before {
+            background: $accent-color;
+          }
+  
+          &:after {
+            background: $accent-color;
+          }
+        } 
+      }
+    }
+  }
+
+
+//Intro
+.intro-overlay{
+  width: 100%;
+  height: 100vh;
+  min-height: 500px;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  z-index: 8;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  .overlay-bar{
+    flex: 1 1 0px;
+    background-color: black;
+  }
+}
+
+
+//Landing screen
+.landing{
+  width: 100%;
+  height: 100vh;
+  min-height: 500px;
+  display: flex;
+  flex-direction: row;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  .landing-top-shadow{
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 100%);
+    z-index: 4;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  .landing-text-cont{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+
+    h2{
+      visibility: hidden;
+      font-weight: 500;
+      font-size: calc(14px + (72 - 14) * ((100vw - 300px) / (1600 - 300)));
+      color: $white;
+      text-align: center;
+
+      @media (max-width: 768px) {
+        font-size: 50px;
+      }
+    }
+  }
+
+  .landing-image-cont{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+  }
+
+  .landing-food-cont{
+    flex: 1 1 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+
+    :after{
+      content: "";
+      display: block;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      background: rgba(0,0,0,.5);
+      -moz-transition: 0.5s all $ease-in-out-cubic;
+      -webkit-transition: 0.5s all $ease-in-out-cubic;
+      transition: 0.5s all $ease-in-out-cubic;
+      top: 0;
+      left: 0;
+      position: absolute;
+    }
+
+    :hover:after{
+      opacity: 1;
+    }
+  }
+
+
+  .landing-portraits-cont{
+    flex: 1 1 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+
+    :after{
+      content: "";
+      display: block;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      background: rgba(0,0,0,.5);
+      -moz-transition: 0.5s all $ease-in-out-cubic;
+      -webkit-transition: 0.5s all $ease-in-out-cubic;
+      transition: 0.5s all $ease-in-out-cubic;
+      top: 0;
+      left: 0;
+      position: absolute;
+    }
+
+    :hover:after{
+      opacity: 1;
+    }
+  }
+
+  .landing-weddings-cont{
+    flex: 1 1 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+
+    :after{
+      content: "";
+      display: block;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      background: rgba(0,0,0,.5);
+      -moz-transition: 0.5s all $ease-in-out-cubic;
+      -webkit-transition: 0.5s all $ease-in-out-cubic;
+      transition: 0.5s all $ease-in-out-cubic;
+      top: 0;
+      left: 0;
+      position: absolute;
+    }
+
+    :hover:after{
+      opacity: 1;
+    }
+  }
+
+
+}
+  
+  
+
