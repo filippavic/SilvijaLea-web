@@ -12,8 +12,8 @@ import "../styles/styles.scss"
 function IndexPage() {
 
   //gsap timelines - details overlay
-  const [foodtl] = useState(gsap.timeline({paused: true}));
   const [portraitstl] = useState(gsap.timeline({paused: true}));
+  const [foodtl] = useState(gsap.timeline({paused: true}));
   const [weddingstl] = useState(gsap.timeline({paused: true}));
 
 
@@ -65,6 +65,22 @@ function IndexPage() {
 
   }, [])
 
+
+  //gsap animation - portraits overlay
+  useEffect(() => {       
+    portraitstl.from("#portraits-text", {
+      autoAlpha: 0,
+      y: 20,
+    }).to("#portraits-text", 0.6, {
+      autoAlpha: 1,
+      y: 0,
+      ease: "expo.inOut",
+      stagger: { amount: 0.7 },
+    })
+
+  }, [portraitstl]);
+
+
   //gsap animation - food overlay
   useEffect(() => {      
     foodtl.from("#food-text", {
@@ -80,21 +96,6 @@ function IndexPage() {
     })
 
   }, [foodtl]);
-
-
-  //gsap animation - portraits overlay
-  useEffect(() => {       
-    portraitstl.from("#portraits-text", {
-      autoAlpha: 0,
-      y: 20,
-    }).to("#portraits-text", 0.6, {
-      autoAlpha: 1,
-      y: 0,
-      ease: "expo.inOut",
-      stagger: { amount: 0.7 },
-    })
-
-  }, [portraitstl]);
 
 
   //gsap animation - weddings overlay
@@ -119,7 +120,7 @@ function IndexPage() {
       <Helmet>
         <html lang="en" />
         <title>Silvija Lea Švaljek</title>
-        <description>Food photography, portrait photography (indoor & outdoor), wedding & couples photography.</description>
+        <description>Portrait photography (indoor & outdoor), food photography, wedding & couples photography.</description>
       </Helmet>
 
       <div>
@@ -129,21 +130,21 @@ function IndexPage() {
         <div className="landing">
           <div className="landing-top-shadow"></div>
 
-          <div onMouseEnter={() => foodtl.play()} onMouseLeave={() => foodtl.reverse()} className="landing-food-cont" role="link" tabIndex={0}>
-            <div className="landing-text-cont">
-              <h2 id="food-text">FOOD</h2>
-            </div>
-            <div className="landing-image-cont">
-              <img src={require('../images/landing_food.jpg')} alt="" />
-            </div>
-          </div>
-
           <div onMouseEnter={() => portraitstl.play()} onMouseLeave={() => portraitstl.reverse()} className="landing-portraits-cont" role="link" tabIndex={0}>
           <div className="landing-text-cont">
               <h2 id="portraits-text">PORTRAITS</h2>
             </div>
             <div className="landing-image-cont">
               <img src={require('../images/landing_portraits.jpg')} alt="" />
+            </div>
+          </div>
+
+          <div onMouseEnter={() => foodtl.play()} onMouseLeave={() => foodtl.reverse()} className="landing-food-cont" role="link" tabIndex={0}>
+            <div className="landing-text-cont">
+              <h2 id="food-text">FOOD</h2>
+            </div>
+            <div className="landing-image-cont">
+              <img src={require('../images/landing_food.jpg')} alt="" />
             </div>
           </div>
 

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Silvija Lea Švaljek`,
-    description: `Food photography, portrait photography (indoor & outdoor), wedding & couples photography.`,
+    description: `Portrait photography (indoor & outdoor), food photography, wedding & couples photography.`,
     author: `apeiron`,
   },
   plugins: [
