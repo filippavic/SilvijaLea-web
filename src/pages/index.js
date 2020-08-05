@@ -120,7 +120,6 @@ function IndexPage() {
       <Helmet>
         <html lang="en" />
         <title>Silvija Lea Švaljek</title>
-        <description>Portrait photography (indoor & outdoor), food photography, wedding & couples photography.</description>
       </Helmet>
 
       <div>
@@ -131,7 +130,7 @@ function IndexPage() {
           <div className="landing-top-shadow"></div>
 
           <div onMouseEnter={() => portraitstl.play()} onMouseLeave={() => portraitstl.reverse()} className="landing-portraits-cont" role="link" tabIndex={0}>
-          <div className="landing-text-cont">
+            <div className="landing-text-cont">
               <h2 id="portraits-text">PORTRAITS</h2>
             </div>
             <div className="landing-image-cont">

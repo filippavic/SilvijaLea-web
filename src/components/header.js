@@ -1,4 +1,5 @@
 import React from "react"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 function Header() {
 
@@ -24,7 +25,10 @@ function Header() {
             </div>
 
             <div className="header-about">
-              <a role="button" tabIndex={0} aria-label="about" className="contact-animate" id="contact-button">ABOUT ME</a>
+              <AniLink paintDrip direction="right" hex="#88a376" to="about">
+                {/* <a role="button" tabIndex={0} aria-label="about" className="contact-animate" id="contact-button">ABOUT ME</a> */}
+                ABOUT ME
+              </AniLink>
             </div>
           </div>
         </div>
