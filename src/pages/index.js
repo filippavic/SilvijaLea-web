@@ -121,6 +121,28 @@ function IndexPage() {
       <Helmet>
         <html lang="en" />
         <title>Silvija Lea Švaljek</title>
+
+        <meta name="description" content="Portrait photography (indoor & outdoor), food photography, wedding & couples photography." />
+        <meta name="copyright" content="apeiron" />
+
+        {/* Theme color */}
+        <meta name="theme-color" content="#88a376" />
+        <meta name="msapplication-navbutton-color" content="#88a376" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="#88a376" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://silvijalea.netlify.app/" />
+        <meta property="og:title" content="Silvija Lea Švaljek" />
+        <meta property="og:description" content="Portrait photography (indoor & outdoor), food photography, wedding & couples photography." />
+        <meta property="og:image" content={require('../images/web_preview.jpg')} />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://silvijalea.netlify.app/" />
+        <meta property="twitter:title" content="Silvija Lea Švaljek" />
+        <meta property="twitter:description" content="Portrait photography (indoor & outdoor), food photography, wedding & couples photography." />
+        <meta property="twitter:image" content={require('../images/web_preview.jpg')} />
       </Helmet>
 
       <div>
@@ -134,8 +156,9 @@ function IndexPage() {
             <div className="landing-text-cont">
               <h2 id="portraits-text">PORTRAITS</h2>
             </div>
+
             <div className="landing-image-cont">
-              <img src={require('../images/landing_portraits.jpg')} alt="" />
+              <img src={require('../images/landing_portraits.jpg')} alt="Portrait of a young woman in a field" />
             </div>
           </div>
 
@@ -144,20 +167,21 @@ function IndexPage() {
             <AniLink paintDrip direction="down" hex="#88a376" to="food" className="landing-link"></AniLink>
             
             <div className="landing-text-cont">
-                <h2 id="food-text">FOOD</h2>
-              
+                <h2 id="food-text">FOOD</h2>          
             </div>
+
             <div className="landing-image-cont">
               <img src={require('../images/landing_food.jpg')} alt="" />
             </div>
           </div>
 
           <div onMouseEnter={() => weddingstl.play()} onMouseLeave={() => weddingstl.reverse()} className="landing-weddings-cont" role="link" tabIndex={0}>
-          <div className="landing-text-cont">
+            <div className="landing-text-cont">
               <h2 id="weddings-text">WEDDINGS<br/>&<br/>COUPLES</h2>
             </div>
+
             <div className="landing-image-cont">
-              <img src={require('../images/landing_weddings.jpg')} alt="" />
+              <img src={require('../images/landing_weddings.jpg')} alt="A married couple laughing" />
             </div>
           </div>
 

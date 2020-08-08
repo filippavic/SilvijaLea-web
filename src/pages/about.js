@@ -94,7 +94,7 @@ function AboutPage() {
 
           <div className="about-content">
               <div className="about-content-left">
-                <img src={require('../images/silvija_polaroid.jpg')} alt="" draggable="false"/>
+                <img src={require('../images/silvija_polaroid.jpg')} alt="A portrait of Silvija on a bridge" draggable="false"/>
               </div>
 
               <div className="about-content-right">
