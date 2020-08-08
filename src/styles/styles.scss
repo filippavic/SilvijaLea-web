@@ -187,6 +187,60 @@ header {
   }
 
 
+//Footer
+footer {
+
+  .footer-container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    margin-top: 50px;
+    margin-bottom: 20px;
+
+    .inner-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .footer-copyright {
+        a {
+          text-decoration: none;
+          font-weight: 500;
+          font-size: calc(12px + (15 - 12) * ((100vw - 300px) / (1600 - 300)));
+          color: $grey;
+          transition: 0.4s color $ease-in-out-cubic;
+
+          &:hover {
+            color: $accent-color;
+            transition: 0.4s color $ease-in-out-cubic;
+          }
+        }
+
+        .heart-icon {
+          color: $accent-color;
+        }
+      }
+
+      .footer-links {
+        .icon-footer {
+          color: $grey;
+          margin-left: 15px;
+          transition: 0.4s color $ease-in-out-cubic;
+
+          &:hover {
+            color: $accent-color;
+            transition: 0.4s color $ease-in-out-cubic;
+          }
+        }
+        
+      } 
+    }
+  } 
+}
+
+
 //Intro
 .intro-overlay{
   width: 100%;
@@ -259,6 +313,7 @@ header {
     height: 100%;
     overflow: hidden;
     position: absolute;
+    pointer-events: all;
 
     img {
       height: 100%;
@@ -266,6 +321,14 @@ header {
       object-fit: cover;
     }
 
+  }
+
+  .landing-link {
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 20;
   }
 
   .landing-food-cont{
@@ -544,4 +607,52 @@ header {
       }
     }
   }
+}
+
+//Gallery page
+.gallery-wrapper {
+  overflow: hidden;
+}
+
+.gallery {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+
+  .gallery-title {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    @media (max-width: 768px) {
+      align-items: center;
+    }
+
+    h1 {
+      font-weight: 600;
+      font-size: calc(30px + (72 - 30) * ((100vw - 300px) / (1600 - 300)));
+      color: $grey-alt;
+    }   
+  }
+
+  .gallery-content {
+    height: 70%;
+    width: 80%;
+    max-width: 1200px;
+    padding-top: 50px;
+    align-self: center;
+
+    @media (max-width: 768px) {
+      padding-top: 0px;
+    }
+
+
+  }
+
+  
 }

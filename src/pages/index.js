@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { Helmet } from "react-helmet"
 import { gsap } from "gsap"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 //import Image from "../components/image"
 //import SEO from "../components/seo"
@@ -138,9 +139,13 @@ function IndexPage() {
             </div>
           </div>
 
-          <div onMouseEnter={() => foodtl.play()} onMouseLeave={() => foodtl.reverse()} className="landing-food-cont" role="link" tabIndex={0}>
+          
+          <div href="/food" onMouseEnter={() => foodtl.play()} onMouseLeave={() => foodtl.reverse()} className="landing-food-cont" role="link" tabIndex={0}>
+            <AniLink paintDrip direction="down" hex="#88a376" to="food" className="landing-link"></AniLink>
+            
             <div className="landing-text-cont">
-              <h2 id="food-text">FOOD</h2>
+                <h2 id="food-text">FOOD</h2>
+              
             </div>
             <div className="landing-image-cont">
               <img src={require('../images/landing_food.jpg')} alt="" />
