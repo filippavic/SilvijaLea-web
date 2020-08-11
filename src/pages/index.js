@@ -143,7 +143,7 @@ function IndexPage() {
         <meta property="twitter:description" content="Portrait photography (indoor & outdoor), food photography, wedding & couples photography." />
         <meta property="twitter:image" content={require('../images/web_preview.jpg')} />
 
-        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&display=swap" rel="stylesheet"></link>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600&display=swap" rel="stylesheet"></link>
       </Helmet>
 
       <div>

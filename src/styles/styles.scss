@@ -8,7 +8,9 @@ $cubic-transition: 0.5s $ease-in-out-cubic;
 
 @font-face {
   font-family: "Dalmatins";
-  src: url("../fonts/Dalmatins.otf") format("otf");
+  src: url("../fonts/dalmatins-webfont.woff2") format("woff2"),
+       url("../fonts/dalmatins-webfont.woff") format("woff"),
+       url("../fonts/Dalmatins.otf") format("opentype");
   font-display: swap;
 }
 
