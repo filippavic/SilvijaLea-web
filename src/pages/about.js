@@ -89,7 +89,7 @@ function AboutPage() {
 
         <div className="about">
           <div className="about-title">
-              <h1>ABOUT ME</h1>
+              <h1 id="about-decoration">ABOUT ME</h1>
           </div>
 
           <div className="about-content">

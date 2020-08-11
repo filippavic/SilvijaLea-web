@@ -3,8 +3,7 @@ import { Helmet } from "react-helmet"
 import { gsap } from "gsap"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
-//import Image from "../components/image"
-//import SEO from "../components/seo"
+import Image from "../components/image"
 import Intro from "../components/intro"
 import Header from "../components/header"
 
@@ -143,6 +142,8 @@ function IndexPage() {
         <meta property="twitter:title" content="Silvija Lea Švaljek" />
         <meta property="twitter:description" content="Portrait photography (indoor & outdoor), food photography, wedding & couples photography." />
         <meta property="twitter:image" content={require('../images/web_preview.jpg')} />
+
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&display=swap" rel="stylesheet"></link>
       </Helmet>
 
       <div>
@@ -158,7 +159,7 @@ function IndexPage() {
             </div>
 
             <div className="landing-image-cont">
-              <img src={require('../images/landing_portraits.jpg')} alt="Portrait of a young woman in a field" />
+              <Image className="picture" filename="landing_portraits.jpg" alt="Portrait of a young woman in a field" objectPosition="center"/>
             </div>
           </div>
 
@@ -171,7 +172,7 @@ function IndexPage() {
             </div>
 
             <div className="landing-image-cont">
-              <img src={require('../images/landing_food.jpg')} alt="" />
+              <Image className="picture" filename="landing_food.jpg" alt="Chub mackerel paste served on a table" objectPosition="center"/>
             </div>
           </div>
 
@@ -181,7 +182,7 @@ function IndexPage() {
             </div>
 
             <div className="landing-image-cont">
-              <img src={require('../images/landing_weddings.jpg')} alt="A married couple laughing" />
+              <Image className="picture" filename="landing_weddings.jpg" alt="A married couple laughing" objectPosition="top"/>
             </div>
           </div>
 

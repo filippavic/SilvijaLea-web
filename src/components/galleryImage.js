@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 
-const Image = (props) => (
+const GalleryImage = (props) => (
   <StaticQuery
     query={graphql`
       query {
@@ -31,9 +31,9 @@ const Image = (props) => (
       }
 
       //const imageSizes = image.node.childImageSharp.sizes; sizes={imageSizes}
-      return <Img alt={props.alt} fluid={image.node.childImageSharp.fluid} style={{position: "initial"}} imgStyle={{objectPosition: props.objectPosition}}/>;
+      return <Img alt={props.alt} fluid={image.node.childImageSharp.fluid} style={{objectFit: "cover"}}/>;
     }}
   />
 );
 
-export default Image
+export default GalleryImage

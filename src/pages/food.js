@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import { Helmet } from "react-helmet"
 import { gsap } from "gsap"
 
-import Gallery from "react-photo-gallery"
+// import Gallery from "react-photo-gallery"
 import { foodPhotos } from "../variables/food_photos";
 
 import SimpleReactLightbox from "simple-react-lightbox"
@@ -10,6 +10,8 @@ import { SRLWrapper } from "simple-react-lightbox"
 
 import HeaderAlt from "../components/headerAlt"
 import Footer from "../components/footer"
+
+import PortraitRow from "../components/portraitRow"
 
 import "../styles/styles.scss"
 
@@ -106,12 +108,18 @@ function FoodPage() {
             <SimpleReactLightbox>
                 <div className="gallery">
                     <div className="gallery-title">
-                        <h1>FOOD</h1>
+                        <h1 id="food-decoration">FOOD</h1>
                     </div>
 
                     <div className="gallery-content">
                         <SRLWrapper options={LightboxOptions}>
-                            <Gallery photos={foodPhotos} onClick={e => e.preventDefault()} margin={15} data-attribute="SRL"/>
+                            {/* <Gallery photos={foodPhotos} onClick={e => e.preventDefault()} margin={15} data-attribute="SRL"/> */}
+                            <PortraitRow images={foodPhotos[0]}/>
+                            <PortraitRow images={foodPhotos[1]}/>
+                            <PortraitRow images={foodPhotos[2]}/>
+                            <PortraitRow images={foodPhotos[3]}/>
+                            <PortraitRow images={foodPhotos[4]}/>
+
                         </SRLWrapper>
                     </div>
                 

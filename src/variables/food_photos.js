@@ -1,34 +1,33 @@
 export const foodPhotos = [
-    {
-        src: require("../images/food/101366067_276344850401915_6688277732585942791_n.jpg"),
-        width: 4,
-        height: 5
-    },
-    {
-        src: require("../images/food/101249339_244599183627423_1558279983122584505_n.jpg"),
-        width: 4,
-        height: 5
-    },
-    {
-        src: require("../images/food/106717780_110567044059000_212659347639592046_n.jpg"),
-        width: 4,
-        height: 5
-    },
-    {
-        src: require("../images/food/106034110_705612770227402_6347250699643492189_n.jpg"),
-        width: 4,
-        height: 5
-    },
-    {
-        src: require("../images/food/69458858_211379953180603_8664228292782553612_n.jpg"),
-        width: 16,
-        height: 9
-    },
-    {
-        src: require("../images/food/100931843_140435644244879_6032814828178374573_n.jpg"),
-        width: 16,
-        height: 9
-    },
-    
+    [
+        "food/IMG_7841.jpg",
+        "food/IMG_6811.jpg",
+        "food/IMG_0384.jpg",
+        "food/IMG_8170.jpg",
+    ],
+    [
+        "food/IMG_8903.jpg",
+        "food/IMG_3921.jpg",
+        "food/IMG_9408.jpg",
+        "food/IMG_8104.jpg",
+    ],
+    [
+        "food/IMG_9398.jpg",
+        "food/IMG_9634.jpg",
+        "food/IMG_0344.jpg",
+        "food/IMG_9373.jpg",
+    ],
+    [
+        "food/IMG_8628.jpg",
+        "food/IMG_8836.jpg",
+        "food/IMG_9512.jpg",
+        "food/IMG_7788.jpg",
+    ],
+    [
+        "food/IMG_3259.jpg",
+        "food/IMG_7928.jpg",
+        "food/IMG_8305.jpg",
+        "food/IMG_8392.jpg",
+    ]
 ];
   
