@@ -11,22 +11,6 @@ function PortraitRow (props) {
                 <GalleryImage filename={image} alt="" objectPosition="center"/>
             </div>
         ))}
-
-        {/* <div className="portrait-photo">
-            <Image filename={props.image1} alt="" objectPosition="center"/>
-        </div>
-
-        <div className="portrait-photo">
-            <Image filename="food/101366067_276344850401915_6688277732585942791_n.jpg" alt="" objectPosition="center"/>
-        </div>
-
-        <div className="portrait-photo">
-            <Image filename="food/101366067_276344850401915_6688277732585942791_n.jpg" alt="" objectPosition="center"/>
-        </div>
-
-        <div className="portrait-photo">
-            <Image filename="food/101366067_276344850401915_6688277732585942791_n.jpg" alt="" objectPosition="center"/>
-        </div> */}
     </div>
 
   )

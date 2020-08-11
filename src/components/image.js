@@ -30,7 +30,6 @@ const Image = (props) => (
         return null;
       }
 
-      //const imageSizes = image.node.childImageSharp.sizes; sizes={imageSizes}
       return <Img alt={props.alt} fluid={image.node.childImageSharp.fluid} style={{position: "initial"}} imgStyle={{objectPosition: props.objectPosition}}/>;
     }}
   />

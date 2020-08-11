@@ -60,6 +60,8 @@ function FoodPage() {
         foodtl.set(".header-about, .logo", {
             autoAlpha: 0,
             y: 20,
+        }).set(".gallery-content", {
+            autoAlpha: 0
         }).set(".gallery-title h1", {
             autoAlpha: 0,
             y: 20,
@@ -75,6 +77,8 @@ function FoodPage() {
             ease: "expo.inOut",
             skewX: 0,
             stagger: { amount: 0.2 },
+        }).set(".gallery-content", {
+            autoAlpha: 1
         }).to(".gallery-content img", 1.0, {
             autoAlpha: 1,
             delay: -0.4,
@@ -100,6 +104,11 @@ function FoodPage() {
         <Helmet>
             <html lang="en" />
             <title>Silvija Lea Švaljek | Food photography</title>
+
+            {/* Theme color */}
+            <meta name="theme-color" content="#88a376" />
+            <meta name="msapplication-navbutton-color" content="#88a376" />
+            <meta name="apple-mobile-web-app-status-bar-style" content="#88a376" />
         </Helmet>
 
         <div className="gallery-wrapper">

@@ -1,19 +1,16 @@
 import React from "react"
 
-import Image from "./image"
+import GalleryImage from "./galleryImage"
 
-function LandscapeRow() {
+function LandscapeRow (props) {
 
   return(
     <div className="landscape-row">
-        <div className="landscape-photo">
-            {/* <Image filename="food/101366067_276344850401915_6688277732585942791_n.jpg" alt="" objectPosition="center"/> */}
-        </div>
-
-        <div className="landscape-photo">
-            {/* <Image filename="food/101366067_276344850401915_6688277732585942791_n.jpg" alt="" objectPosition="center"/> */}
-        </div>
-        
+        {props.images.map( image => (
+            <div className="landscape-photo" key={image}>
+                <GalleryImage filename={image} alt="" objectPosition="center"/>
+            </div>
+        ))}
     </div>
 
   )

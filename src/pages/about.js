@@ -82,6 +82,11 @@ function AboutPage() {
       <Helmet>
         <html lang="en" />
         <title>Silvija Lea Švaljek | About me</title>
+
+        {/* Theme color */}
+        <meta name="theme-color" content="#88a376" />
+        <meta name="msapplication-navbutton-color" content="#88a376" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="#88a376" />
       </Helmet>
 
       <div>
