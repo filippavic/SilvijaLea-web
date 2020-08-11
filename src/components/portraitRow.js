@@ -1,6 +1,6 @@
 import React from "react"
 
-import Image from "./GalleryImage"
+import GalleryImage from "./galleryImage"
 
 function PortraitRow (props) {
 
@@ -8,7 +8,7 @@ function PortraitRow (props) {
     <div className="portrait-row">
         {props.images.map( image => (
             <div className="portrait-photo" key={image}>
-                <Image filename={image} alt="" objectPosition="center"/>
+                <GalleryImage filename={image} alt="" objectPosition="center"/>
             </div>
         ))}
 
