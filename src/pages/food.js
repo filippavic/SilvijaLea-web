@@ -81,7 +81,7 @@ function FoodPage() {
             autoAlpha: 1
         }).to(".gallery-content img", 1.0, {
             autoAlpha: 1,
-            delay: -0.4,
+            delay: 0.1,
             y: 0,
             ease: "expo.inOut",
             skewY: 0,

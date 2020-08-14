@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 
-const Image = (props) => (
+const HeaderImage = (props) => (
   <StaticQuery
     query={graphql`
       query {
@@ -13,8 +13,8 @@ const Image = (props) => (
               relativePath
               name
               childImageSharp {
-                fluid(maxWidth: 800, quality: 90) {
-                  ...GatsbyImageSharpFluid_withWebp
+                fluid(quality: 90) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }
@@ -35,4 +35,4 @@ const Image = (props) => (
   />
 );
 
-export default Image
+export default HeaderImage
