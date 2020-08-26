@@ -2,8 +2,8 @@ import React, { useEffect, useRef } from "react"
 import { Helmet } from "react-helmet"
 import { gsap } from "gsap"
 
-// import Gallery from "react-photo-gallery"
-import { foodPhotos } from "../variables/food_photos";
+import { couplePhotos } from "../variables/couple_photos";
+import { weddingPhotos } from "../variables/wedding_photos";
 
 import SimpleReactLightbox from "simple-react-lightbox"
 import { SRLWrapper } from "simple-react-lightbox"
@@ -12,6 +12,7 @@ import HeaderAlt from "../components/headerAlt"
 import Footer from "../components/footer"
 
 import PortraitRow from "../components/portraitRow"
+import LandscapeRow from "../components/landscapeRow"
 
 import "../styles/styles.scss"
 
@@ -45,7 +46,7 @@ const LightboxOptions = {
     }
 };
 
-function FoodPage() {
+function WeddingsPage() {
 
   const pathRef = useRef(null);
 
@@ -53,12 +54,12 @@ function FoodPage() {
     //scroll window to top
     window.scrollTo(0,0);
 
-    //gsap timeline - food page
-    const foodtl = gsap.timeline();
+    //gsap timeline - weddings page
+    const weddingstl = gsap.timeline();
 
     //delayed because gallery needs to be mounted first
     setTimeout(function() {
-        foodtl.set(".header-about, .logo", {
+        weddingstl.set(".header-about, .logo", {
             autoAlpha: 0,
             y: 20,
         })
@@ -148,7 +149,7 @@ function FoodPage() {
     <main>
         <Helmet>
             <html lang="en" />
-            <title>Silvija Lea Švaljek | Food photography</title>
+            <title>Silvija Lea Švaljek | Weddings & couples photography</title>
 
             {/* Theme color */}
             <meta name="theme-color" content="#88a376" />
@@ -168,17 +169,30 @@ function FoodPage() {
             <SimpleReactLightbox>
                 <div className="gallery">
                     <div className="gallery-title">
-                        <h1 id="food-decoration">FOOD</h1>
+                        <h1 id="weddings-decoration">WEDDINGS & COUPLES</h1>
                     </div>
 
                     <div className="gallery-content">
                         <SRLWrapper options={LightboxOptions}>
-                            {/* <Gallery photos={foodPhotos} onClick={e => e.preventDefault()} margin={15} data-attribute="SRL"/> */}
-                            <PortraitRow images={foodPhotos[0]}/>
-                            <PortraitRow images={foodPhotos[1]}/>
-                            <PortraitRow images={foodPhotos[2]}/>
-                            <PortraitRow images={foodPhotos[3]}/>
-                            <PortraitRow images={foodPhotos[4]}/>
+                            <LandscapeRow images={couplePhotos[0]}/>
+                            <PortraitRow images={couplePhotos[3]}/>
+                            <LandscapeRow images={couplePhotos[4]}/>
+                            <PortraitRow images={couplePhotos[5]}/>
+                            <PortraitRow images={couplePhotos[1]}/>
+                            <LandscapeRow images={couplePhotos[2]}/>
+
+                            <PortraitRow images={weddingPhotos[3]}/>
+                            <PortraitRow images={weddingPhotos[2]}/>
+                            <LandscapeRow images={weddingPhotos[0]}/>
+                            <PortraitRow images={weddingPhotos[1]}/>
+                            <LandscapeRow images={weddingPhotos[4]}/>
+                            <PortraitRow images={weddingPhotos[6]}/>
+                            <LandscapeRow images={weddingPhotos[5]}/>
+                            <PortraitRow images={weddingPhotos[9]}/>
+                            <LandscapeRow images={weddingPhotos[7]}/>
+                            <PortraitRow images={weddingPhotos[8]}/>
+                            <PortraitRow images={weddingPhotos[10]}/>
+                            <LandscapeRow images={weddingPhotos[11]}/>
 
                         </SRLWrapper>
                     </div>
@@ -193,4 +207,4 @@ function FoodPage() {
   )
 }
 
-export default FoodPage
+export default WeddingsPage

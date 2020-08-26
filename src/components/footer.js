@@ -1,8 +1,5 @@
 import React from "react"
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 function Footer() {
 
@@ -21,10 +18,10 @@ function Footer() {
 
                 <div className="footer-links">
                     <a href="https://www.instagram.com/silvija.lea" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faInstagram} className="icon-footer"/>
+                        <i className="fab fa-instagram icon-footer"></i>
                     </a>
                     <a href="https://www.facebook.com/silvijaleaphotography" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faFacebookF} className="icon-footer"/>
+                        <i className="fab fa-facebook icon-footer"></i>
                     </a>
                           
                 </div>

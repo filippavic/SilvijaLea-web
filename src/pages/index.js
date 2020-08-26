@@ -31,26 +31,33 @@ function IndexPage() {
     tl.set(".header-about, .logo", {
       autoAlpha: 0,
       y: 10,
+    }).to(".logo-handwritten", 0.8, {
+      autoAlpha: 0,
+      ease: "expo.inOut",
+      delay: 2.5
     })
     
     if (width > 768) {
-      tl.to(".overlay-bar", 1.6, {
+      tl.to(".overlay-bar", 1.3, {
         height: 0,
         ease: "expo.inOut",
         stagger: { amount: 0.4 },
+        delay: -1.2
       })
     }
     else {
-      tl.to(".overlay-bar", 1.6, {
+      tl.to(".overlay-bar", 1.3, {
         width: 0,
         ease: "expo.inOut",
         stagger: { amount: 0.4 },
+        delay: -1.2
       })
     }
     
     tl.to(".intro-overlay", 0, {
       css: { display: "none" },
-    }).from(".landing-image-cont img", 1.6, {
+    })
+    .from(".landing-image-cont img", 1.6, {
       scale: 1.4,
       ease: "expo.inOut",
       delay: -2,
@@ -144,6 +151,8 @@ function IndexPage() {
         <meta property="twitter:image" content={require('../images/web_preview.jpg')} />
 
         <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600&display=swap" rel="stylesheet"></link>
+
+        <script src="https://kit.fontawesome.com/b018042866.js" crossorigin="anonymous"></script>
       </Helmet>
 
       <div>
@@ -153,7 +162,9 @@ function IndexPage() {
         <div className="landing">
           <div className="landing-top-shadow"></div>
 
-          <div onMouseEnter={() => portraitstl.play()} onMouseLeave={() => portraitstl.reverse()} className="landing-portraits-cont" role="link" tabIndex={0}>
+          <div href="/portraits" onMouseEnter={() => portraitstl.play()} onMouseLeave={() => portraitstl.reverse()} className="landing-portraits-cont" role="link" tabIndex={0}>
+            <AniLink paintDrip direction="left" hex="#88a376" to="/portraits" className="landing-link"></AniLink>
+            
             <div className="landing-text-cont">
               <h2 id="portraits-text">PORTRAITS</h2>
             </div>
@@ -163,9 +174,8 @@ function IndexPage() {
             </div>
           </div>
 
-          
           <div href="/food" onMouseEnter={() => foodtl.play()} onMouseLeave={() => foodtl.reverse()} className="landing-food-cont" role="link" tabIndex={0}>
-            <AniLink paintDrip direction="down" hex="#88a376" to="food" className="landing-link"></AniLink>
+            <AniLink paintDrip direction="down" hex="#88a376" to="/food" className="landing-link"></AniLink>
             
             <div className="landing-text-cont">
                 <h2 id="food-text">FOOD</h2>          
@@ -176,7 +186,9 @@ function IndexPage() {
             </div>
           </div>
 
-          <div onMouseEnter={() => weddingstl.play()} onMouseLeave={() => weddingstl.reverse()} className="landing-weddings-cont" role="link" tabIndex={0}>
+          <div href="/weddings" onMouseEnter={() => weddingstl.play()} onMouseLeave={() => weddingstl.reverse()} className="landing-weddings-cont" role="link" tabIndex={0}>
+            <AniLink paintDrip direction="right" hex="#88a376" to="/weddings" className="landing-link"></AniLink>
+            
             <div className="landing-text-cont">
               <h2 id="weddings-text">WEDDINGS<br/>&<br/>COUPLES</h2>
             </div>

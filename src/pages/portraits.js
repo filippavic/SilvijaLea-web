@@ -1,8 +1,7 @@
-import React, { useEffect, useRef } from "react"
+import React, { useEffect } from "react"
 import { Helmet } from "react-helmet"
 import { gsap } from "gsap"
 
-// import Gallery from "react-photo-gallery"
 import { foodPhotos } from "../variables/food_photos";
 
 import SimpleReactLightbox from "simple-react-lightbox"
@@ -45,30 +44,31 @@ const LightboxOptions = {
     }
 };
 
-function FoodPage() {
+function PortraitsPage() {
 
-  const pathRef = useRef(null);
 
   useEffect(() => {
     //scroll window to top
     window.scrollTo(0,0);
 
-    //gsap timeline - food page
-    const foodtl = gsap.timeline();
+    //gsap timeline - portraits page
+    const portraitstl = gsap.timeline();
 
     //delayed because gallery needs to be mounted first
     setTimeout(function() {
-        foodtl.set(".header-about, .logo", {
+        portraitstl.set(".header-about, .logo", {
             autoAlpha: 0,
             y: 20,
+        })
+        .set(".gallery-content", {
+            // autoAlpha: 0
         })
         .set(".gallery-title h1", {
             autoAlpha: 0,
             y: 20,
             skewX: 3,
         }).set(".gallery-content img", {
-            visibility: "hidden",
-            opacity: 0,
+            // autoAlpha: 0,
             y: 30,
             skewY: 3,
         }).to(".gallery-title h1", 1.1, {
@@ -78,7 +78,11 @@ function FoodPage() {
             ease: "expo.inOut",
             skewX: 0,
             stagger: { amount: 0.2 },
-        }).to(".gallery-content img", 1.1, {
+        })
+        .to(".gallery-content", 0, {
+            autoAlpha: 1
+        })
+        .to(".gallery-content img", 1.1, {
             autoAlpha: 1,
             delay: 0.2,
             y: 0,
@@ -94,61 +98,15 @@ function FoodPage() {
         })
     }, 200);
 
-
-    //scroll indicator setup
-    var path = pathRef.current;
-    var pathLength = path.getTotalLength();
-    path.style.transition = path.style.WebkitTransition = 'none';
-    path.style.strokeDasharray = pathLength + ' ' + pathLength;
-    path.style.transition = path.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
-
-    //subscribe to event listener
-    window.addEventListener('scroll', handleScroll);
-
-    //unsubscribe from event listener
-    return () => {
-        window.removeEventListener('scroll', handleScroll);
-    };
-
-
   }, [])
 
-
-  //scroll indicator function
-  const handleScroll = () => {
-      //calculations
-      var path = pathRef.current;
-      var pathLength = path.getTotalLength();
-      var h = document.documentElement, b = document.body, st = 'scrollTop', sh = 'scrollHeight';
-
-      if (h[st] > 50) {
-          var element = document.getElementsByClassName("progress-wrap")[0];
-          if (!element.classList.contains("active-progress")) element.classList.add("active-progress");
-      } else {
-          var element = document.getElementsByClassName("progress-wrap")[0];
-          element.classList.remove("active-progress");
-      }
-
-      var percent = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight);
-      var progress = pathLength - pathLength * percent;
-      
-      //set style
-      path.style.strokeDashoffset = progress;
-
-   }
-
-   const scrollToTop = () => {
-       window.scrollTo({top: 0, behavior: 'smooth'});
-   }
-
-  
 
 
   return (
     <main>
         <Helmet>
             <html lang="en" />
-            <title>Silvija Lea Švaljek | Food photography</title>
+            <title>Silvija Lea Švaljek | Portrait photography</title>
 
             {/* Theme color */}
             <meta name="theme-color" content="#88a376" />
@@ -156,24 +114,17 @@ function FoodPage() {
             <meta name="apple-mobile-web-app-status-bar-style" content="#88a376" />
         </Helmet>
 
-        <div className="gallery-wrapper" >
+        <div className="gallery-wrapper">
             <HeaderAlt />
-
-            <div className="progress-wrap" onClick={scrollToTop}>
-                <svg className="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-                    <path ref={pathRef} d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
-                </svg>
-            </div>
 
             <SimpleReactLightbox>
                 <div className="gallery">
                     <div className="gallery-title">
-                        <h1 id="food-decoration">FOOD</h1>
+                        <h1 id="portraits-decoration">PORTRAITS</h1>
                     </div>
 
                     <div className="gallery-content">
                         <SRLWrapper options={LightboxOptions}>
-                            {/* <Gallery photos={foodPhotos} onClick={e => e.preventDefault()} margin={15} data-attribute="SRL"/> */}
                             <PortraitRow images={foodPhotos[0]}/>
                             <PortraitRow images={foodPhotos[1]}/>
                             <PortraitRow images={foodPhotos[2]}/>
@@ -193,4 +144,4 @@ function FoodPage() {
   )
 }
 
-export default FoodPage
+export default PortraitsPage

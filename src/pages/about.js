@@ -2,12 +2,6 @@ import React, { useEffect } from "react"
 import { Helmet } from "react-helmet"
 import { gsap } from "gsap"
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhone } from '@fortawesome/free-solid-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
-
 import HeaderAlt from "../components/headerAlt"
 
 import "../styles/styles.scss"
@@ -111,19 +105,19 @@ function AboutPage() {
 
                 <div className="about-links">
                     <span id="link1">
-                        <FontAwesomeIcon icon={faPhone} className="icon-class"/>
+                        <i className="fas fa-phone icon-class"></i>
                         <a href="tel:+385919128683" target="_blank" rel="noopener noreferrer">+385 91 912 8683</a>
                     </span>
                     <span id="link2">
-                        <FontAwesomeIcon icon={faEnvelope} className="icon-class"/>
+                        <i className="fas fa-envelope icon-class"></i>
                         <a href="mailto:info@silvijalea.art" target="_blank" rel="noopener noreferrer">info@silvijalea.art</a>
                     </span>
                     <span id="link3">
-                        <FontAwesomeIcon icon={faInstagram} className="icon-class"/>
+                        <i className="fab fa-instagram icon-class"></i>
                         <a href="https://www.instagram.com/silvija.lea" target="_blank" rel="noopener noreferrer">/silvija.lea</a>
                     </span>
                     <span id="link4">
-                        <FontAwesomeIcon icon={faFacebookF} className="icon-class"/>
+                        <i className="fab fa-facebook icon-class"></i>
                         <a href="https://www.facebook.com/silvijaleaphotography" target="_blank" rel="noopener noreferrer">/silvijaleaphotography</a>
                     </span>
                 </div>
