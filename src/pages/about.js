@@ -17,23 +17,20 @@ function AboutPage() {
     const abouttl = gsap.timeline();
 
     abouttl.set(".header-about, .logo", {
-      autoAlpha: 0,
-      y: 20,
+        y: 20,
     }).set(".about-title h1", {
-        autoAlpha: 0,
         y: 20,
         skewX: 3,
     }).set(".about-content-left img", {
-        autoAlpha: 0,
         y: 20,
         skewY: 3,
-    }).set(".about-desc p, #link1, #link2, #link3, #link4", {
-        autoAlpha: 0,
+    }).set(".about-desc p, #link1, #link2, #link3", {
         y: 20,
         skewY: -3,
     }).set("hr", {
-        autoAlpha: 0,
-        css: { width: 0 }
+        width: '0%'
+    }).to("body", 0, {
+      visibility: "visible"
     }).to(".about-title h1", 1.2, {
         autoAlpha: 1,
         delay: 0.4,
@@ -47,7 +44,7 @@ function AboutPage() {
         y: 0,
         ease: "expo.inOut",
         skewY: 0,
-    }).to(".about-desc p, #link1, #link2, #link3, #link4", 1.6, {
+    }).to(".about-desc p, #link1, #link2, #link3", 1.6, {
         autoAlpha: 1,
         y: 0,
         ease: "expo.inOut",
@@ -55,9 +52,9 @@ function AboutPage() {
         delay: -1.6,
         stagger: { amount: 0.3 },
     }).to("hr", 1.2, {
-        autoAlpha: 0,
+        autoAlpha: 1,
         delay: -1.2,
-        css: { width: "60%" },
+        width: '60%',
         ease: "expo.inOut",
     }).to(".header-about, .logo", 1.6, {
         autoAlpha: 1,
@@ -81,6 +78,8 @@ function AboutPage() {
         <meta name="theme-color" content="#88a376" />
         <meta name="msapplication-navbutton-color" content="#88a376" />
         <meta name="apple-mobile-web-app-status-bar-style" content="#88a376" />
+
+        <script src="https://kit.fontawesome.com/b018042866.js" crossorigin="anonymous"></script>
       </Helmet>
 
       <div>
@@ -109,14 +108,10 @@ function AboutPage() {
                         <a href="tel:+385919128683" target="_blank" rel="noopener noreferrer">+385 91 912 8683</a>
                     </span>
                     <span id="link2">
-                        <i className="fas fa-envelope icon-class"></i>
-                        <a href="mailto:info@silvijalea.art" target="_blank" rel="noopener noreferrer">info@silvijalea.art</a>
-                    </span>
-                    <span id="link3">
                         <i className="fab fa-instagram icon-class"></i>
                         <a href="https://www.instagram.com/silvija.lea" target="_blank" rel="noopener noreferrer">/silvija.lea</a>
                     </span>
-                    <span id="link4">
+                    <span id="link3">
                         <i className="fab fa-facebook icon-class"></i>
                         <a href="https://www.facebook.com/silvijaleaphotography" target="_blank" rel="noopener noreferrer">/silvijaleaphotography</a>
                     </span>

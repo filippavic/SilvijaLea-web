@@ -15,7 +15,7 @@ function Header() {
             </div>
 
             <div className="header-about">
-              <AniLink paintDrip direction="right" hex="#88a376" to="about">
+              <AniLink paintDrip direction="right" hex="#88a376" to="/about">
                 {/* <a role="button" tabIndex={0} aria-label="about" className="contact-animate" id="contact-button">ABOUT ME</a> */}
                 ABOUT ME
               </AniLink>

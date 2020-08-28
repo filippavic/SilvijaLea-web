@@ -3,7 +3,10 @@ import { Helmet } from "react-helmet"
 import { gsap } from "gsap"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
-import Image from "../components/image"
+import PortraitImage from "../components/portraitImage"
+import FoodImage from "../components/foodImage"
+import WeddingImage from "../components/weddingImage"
+
 import Intro from "../components/intro"
 import Header from "../components/header"
 
@@ -170,7 +173,7 @@ function IndexPage() {
             </div>
 
             <div className="landing-image-cont">
-              <Image className="picture" filename="landing_portraits.jpg" alt="Portrait of a young woman in a field" objectPosition="center"/>
+              <PortraitImage className="picture" alt="Portrait of a young woman in a field" objectPosition="center"/>
             </div>
           </div>
 
@@ -182,7 +185,7 @@ function IndexPage() {
             </div>
 
             <div className="landing-image-cont">
-              <Image className="picture" filename="landing_food.jpg" alt="Chub mackerel paste served on a table" objectPosition="center"/>
+              <FoodImage className="picture" alt="Chub mackerel paste served on a table" objectPosition="center"/>
             </div>
           </div>
 
@@ -194,7 +197,7 @@ function IndexPage() {
             </div>
 
             <div className="landing-image-cont">
-              <Image className="picture" filename="landing_weddings.jpg" alt="A married couple laughing" objectPosition="top"/>
+              <WeddingImage className="picture" alt="A married couple laughing" objectPosition="top"/>
             </div>
           </div>
 

@@ -72,6 +72,8 @@ function WeddingsPage() {
             opacity: 0,
             y: 30,
             skewY: 3,
+        }).to("body", 0, {
+            visibility: "visible"
         }).to(".gallery-title h1", 1.1, {
             autoAlpha: 1,
             delay: 0.4,
@@ -155,6 +157,8 @@ function WeddingsPage() {
             <meta name="theme-color" content="#88a376" />
             <meta name="msapplication-navbutton-color" content="#88a376" />
             <meta name="apple-mobile-web-app-status-bar-style" content="#88a376" />
+
+            <script src="https://kit.fontawesome.com/b018042866.js" crossorigin="anonymous"></script>
         </Helmet>
 
         <div className="gallery-wrapper" >
