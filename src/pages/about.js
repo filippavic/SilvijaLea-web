@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { Helmet } from "react-helmet"
 import { gsap } from "gsap"
 
@@ -7,6 +7,10 @@ import HeaderAlt from "../components/headerAlt"
 import "../styles/styles.scss"
 
 function AboutPage() {
+
+  //easter egg
+  const [easterEggOn, setEasterEggOn] = useState(false);
+  var counter = 0;
 
 
   useEffect(() => {
@@ -66,6 +70,20 @@ function AboutPage() {
 
   }, [])
 
+  const showEasterEgg = () => {
+    if (counter == 2 && !easterEggOn) {
+      setEasterEggOn(true);
+      counter = 0;
+    }
+    else if (counter == 2 && easterEggOn) {
+      setEasterEggOn(false);
+      counter = 0;
+    }
+    else {
+      counter += 1;
+    }
+  }
+
 
 
   return (
@@ -83,26 +101,30 @@ function AboutPage() {
       </Helmet>
 
       <div>
-        <HeaderAlt />
+        <HeaderAlt easterEggOn={easterEggOn}/>
 
-        <div className="about">
-          <div className="about-title">
-              <h1 id="about-decoration">ABOUT ME</h1>
+        <div className={"about" + (easterEggOn ? " easter-egg" : "")}>
+          <div className={"about-title" + (easterEggOn ? " easter-egg" : "")}>
+              <h1 id="about-decoration" onClick={() => showEasterEgg()}>ABOUT ME</h1>
           </div>
 
           <div className="about-content">
               <div className="about-content-left">
-                <img src={require('../images/silvija_polaroid.jpg')} alt="A portrait of Silvija on a bridge" draggable="false"/>
+                {easterEggOn ? (
+                  <img src={require('../images/silvija_polaroid_easter_egg.jpg')} alt="A portrait of Silvija on a bridge" draggable="false"/>
+                ) : (
+                  <img src={require('../images/silvija_polaroid.jpg')} alt="A portrait of Silvija on a bridge" draggable="false"/>
+                )}
               </div>
 
               <div className="about-content-right">
-                <div className="about-desc">
+                <div className={"about-desc" + (easterEggOn ? " easter-egg" : "")}>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo ligula, accumsan at felis ut, fermentum hendrerit tellus. Praesent hendrerit neque non turpis mattis molestie. Nam venenatis lobortis urna, in eleifend arcu ultricies quis. Donec convallis eros eget ante hendrerit, non posuere odio malesuada. Nulla efficitur lorem eu eros sagittis ornare.</p>
                 </div>
 
                 <hr className="solid"></hr>
 
-                <div className="about-links">
+                <div className={"about-links" + (easterEggOn ? " easter-egg" : "")}>
                     <span id="link1">
                         <i className="fas fa-phone icon-class"></i>
                         <a href="tel:+385919128683" target="_blank" rel="noopener noreferrer">+385 91 912 8683</a>

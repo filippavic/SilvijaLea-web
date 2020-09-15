@@ -154,8 +154,6 @@ function IndexPage() {
         <meta property="twitter:image" content={require('../images/web_preview.jpg')} />
 
         <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600&display=swap" rel="stylesheet"></link>
-
-        <script src="https://kit.fontawesome.com/b018042866.js" crossorigin="anonymous"></script>
       </Helmet>
 
       <div>

@@ -161,7 +161,7 @@ function PortraitsPage() {
         </Helmet>
 
         <div className="gallery-wrapper" >
-            <HeaderAlt />
+            <HeaderAlt easterEggOn={false}/>
 
             <div className="progress-wrap" onClick={scrollToTop}>
                 <svg className="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
