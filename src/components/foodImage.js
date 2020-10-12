@@ -8,7 +8,7 @@ const FoodImage = (props) => {
     query {
       placeholderImage: file(relativePath: { eq: "landing_food.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 380, quality: 91) {
+          fluid(maxWidth: 700, quality: 89) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }

@@ -67,11 +67,10 @@ function WeddingsPage() {
             autoAlpha: 0,
             y: 20,
             skewX: 3,
-        }).set(".gallery-content img", {
+        }).set(".gatsby-image-wrapper", {
             visibility: "hidden",
             opacity: 0,
-            y: 30,
-            skewY: 3,
+            scale: 1.05
         }).to("body", 0, {
             visibility: "visible"
         }).to(".gallery-title h1", 1.1, {
@@ -81,12 +80,11 @@ function WeddingsPage() {
             ease: "expo.inOut",
             skewX: 0,
             stagger: { amount: 0.2 },
-        }).to(".gallery-content img", 1.1, {
+        }).to(".gatsby-image-wrapper", 1.1, {
             autoAlpha: 1,
             delay: 0.2,
-            y: 0,
             ease: "expo.inOut",
-            skewY: 0,
+            scale: 1,
             stagger: { amount: 0.4 },
         }).to(".header-about, .logo", 1.6, {
             autoAlpha: 1,

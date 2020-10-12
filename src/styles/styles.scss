@@ -159,6 +159,7 @@ header {
       .header-alt {
         a {
           color: $grey;
+          transition: 0.4s color $ease-in-out-cubic;
   
           &:hover {
             color: $accent-color;
@@ -176,6 +177,7 @@ header {
         &.easter-egg {
           a {
             color: #c80004;
+            transition: 0.4s color $ease-in-out-cubic;
           }
         }
       }
@@ -296,6 +298,7 @@ footer {
   min-height: 500px;
   display: flex;
   flex-direction: row;
+  background-color: $black;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -505,9 +508,12 @@ footer {
   min-height: 500px;
   display: flex;
   flex-direction: column;
+  background-color: $white;
+  transition: 0.4s background-color $ease-in-out-cubic;
 
   &.easter-egg {
-    background: $black;
+    background-color: $black;
+    transition: 0.4s background-color $ease-in-out-cubic;
   }
 
   .about-title {
@@ -527,6 +533,7 @@ footer {
       font-size: calc(30px + (72 - 30) * ((100vw - 300px) / (1600 - 300)));
       color: $grey-alt;
       visibility: hidden;
+      transition: 0.4s color $ease-in-out-cubic;
     }
 
     #about-decoration {
@@ -549,6 +556,7 @@ footer {
     &.easter-egg {
       h1 {
         color: #c80004;
+        transition: 0.4s color $ease-in-out-cubic;
       }
     }
     
@@ -617,11 +625,13 @@ footer {
           font-weight: 500;
           font-size: calc(14px + (16 - 14) * ((100vw - 300px) / (1600 - 300)));
           color: $grey;
+          transition: 0.4s color $ease-in-out-cubic;
         }
 
         &.easter-egg {
           p {
             color: #c80004;
+            transition: 0.4s color $ease-in-out-cubic;
           }
         }
       }
@@ -707,15 +717,18 @@ footer {
         .icon-class {
           color: $grey;
           margin-right: 5px;
+          transition: 0.4s color $ease-in-out-cubic;
         }
 
         &.easter-egg {
           a {
             color: #c80004;
+            transition: 0.4s color $ease-in-out-cubic;;
           }
 
           .icon-class {
             color: #c80004;
+            transition: 0.4s color $ease-in-out-cubic;;
           }
         }
       }
@@ -777,7 +790,7 @@ footer {
     .progress-circle path {
       stroke: $accent-color;
       stroke-width: 4;
-      box-sizing:border-box;
+      box-sizing: border-box;
       -webkit-transition: all 200ms $ease-in-out-cubic;
       transition: all 200ms $ease-in-out-cubic;
     }
@@ -787,6 +800,7 @@ footer {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+    transition: all 200ms $ease-in-out-cubic;
   }
 
 
@@ -873,10 +887,6 @@ footer {
       padding-top: 0px;
     }
 
-    img {
-      visibility: hidden;
-    }
-
   }
 
 }
@@ -912,10 +922,6 @@ footer {
       flex-basis: 23.5%;
       height: calc(20vw * 5 / 4);
       margin: 0;
-    }
-
-    img {
-      visibility: hidden;
     }
 
     picture {
@@ -954,10 +960,6 @@ footer {
       flex-basis: 49%;
       height: calc(20vw * 5 / 4);
       margin: 0;
-    }
-
-    img {
-      visibility: hidden;
     }
 
     picture {

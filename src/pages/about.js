@@ -71,11 +71,11 @@ function AboutPage() {
   }, [])
 
   const showEasterEgg = () => {
-    if (counter == 2 && !easterEggOn) {
+    if (counter === 2 && !easterEggOn) {
       setEasterEggOn(true);
       counter = 0;
     }
-    else if (counter == 2 && easterEggOn) {
+    else if (counter === 2 && easterEggOn) {
       setEasterEggOn(false);
       counter = 0;
     }

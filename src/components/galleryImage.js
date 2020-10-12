@@ -14,7 +14,7 @@ const GalleryImage = (props) => (
               name
               childImageSharp {
                 fluid(quality: 90) {
-                  ...GatsbyImageSharpFluid_withWebp
+                  ...GatsbyImageSharpFluid_withWebp_noBase64
                 }
               }
             }
@@ -30,7 +30,7 @@ const GalleryImage = (props) => (
         return null;
       }
 
-      return <Img alt={props.alt} fluid={image.node.childImageSharp.fluid} style={{objectFit: "cover"}}/>;
+      return <Img alt={props.alt} fluid={image.node.childImageSharp.fluid} style={{objectFit: "cover"}} backgroundColor="#D8D8D8"/>;
     }}
   />
 );
