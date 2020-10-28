@@ -184,7 +184,8 @@ function PortraitsPage() {
                             <PortraitRow images={portraitPhotos[6]}/>
                             <PortraitRow images={portraitPhotos[7]}/>
                             <PortraitRow images={portraitPhotos[8]}/>
-                            <LandscapeRow images={portraitPhotos[9]}/>
+                            <PortraitRow images={portraitPhotos[9]}/>
+                            <LandscapeRow images={portraitPhotos[10]}/>
 
                         </SRLWrapper>
                     </div>

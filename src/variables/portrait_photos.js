@@ -42,6 +42,12 @@ export const portraitPhotos = [
         "portraits/IMG_5963.jpg",
     ],
     [
+        "portraits/IMG_0293.jpg",
+        "portraits/IMG_0417.jpg",
+        "portraits/IMG_0389.jpg",
+        "portraits/IMG_0433.jpg",
+    ],
+    [
         "portraits/IMG_5969.jpg",
         "portraits/IMG_3766.jpg",
         "portraits/novo2-2.jpg",
