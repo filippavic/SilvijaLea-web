@@ -34,7 +34,8 @@ function NotFoundPage() {
 
         <div className="notfound-top">
           <h1>404</h1>
-          <h3>No photos here :(</h3>
+          <h3>No photos here.</h3>
+          <h3>Tugy plaky :(</h3>
         </div>
 
         <div className="notfound-bottom">
