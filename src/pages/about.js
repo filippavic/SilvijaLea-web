@@ -98,6 +98,8 @@ function AboutPage() {
         <meta name="msapplication-navbutton-color" content="#88a376" />
         <meta name="apple-mobile-web-app-status-bar-style" content="#88a376" />
 
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600&display=swap" rel="stylesheet"></link>
+
         <script src="https://kit.fontawesome.com/b018042866.js" crossorigin="anonymous"></script>
       </Helmet>
 
@@ -120,7 +122,7 @@ function AboutPage() {
 
               <div className="about-content-right">
                 <div className={"about-desc" + (easterEggOn ? " easter-egg" : "")}>
-                <p>My name is Silvija Lea and I'm a 22-year old hobby photographer based in Krapina. I love taking pictures of people and food. I hope you enjoy my work. You can also check out my social media. <br /><br />I also like beer.</p>
+                <p>My name is Silvija Lea and I'm a 22-year-old hobbyist photographer based in Krapina. I love taking pictures of people and food. I hope you enjoy my work - you can also check it out on my social media. <br /><br />I also like beer.</p>
                 </div>
 
                 <hr className="solid"></hr>

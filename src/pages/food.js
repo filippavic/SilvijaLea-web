@@ -154,6 +154,8 @@ function FoodPage() {
             <meta name="msapplication-navbutton-color" content="#88a376" />
             <meta name="apple-mobile-web-app-status-bar-style" content="#88a376" />
 
+            <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600&display=swap" rel="stylesheet"></link>
+
             <script src="https://kit.fontawesome.com/b018042866.js" crossorigin="anonymous"></script>
         </Helmet>
 
