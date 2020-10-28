@@ -127,7 +127,7 @@ function AboutPage() {
 
                 <div className={"about-links" + (easterEggOn ? " easter-egg" : "")}>
                     <span id="link1">
-                        <i className="fas fa-phone icon-class"></i>
+                        <i className="fab fa-whatsapp icon-class"></i>
                         <a href="tel:+385919128683" target="_blank" rel="noopener noreferrer">+385 91 912 8683</a>
                     </span>
                     <span id="link2">
