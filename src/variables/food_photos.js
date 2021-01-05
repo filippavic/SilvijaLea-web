@@ -1,5 +1,17 @@
 export const foodPhotos = [
     [
+        "food/IMG_7641.jpg",
+        "food/IMG_8468.jpg",
+        "food/IMG_7806.jpg",
+        "food/IMG_7684.jpg",
+    ],
+    [
+        "food/IMG_8055.jpg",
+        "food/IMG_7886.jpg",
+        "food/IMG_7942.jpg",
+        "food/IMG_7759.jpg",
+    ],
+    [
         "food/IMG_7841.jpg",
         "food/IMG_6811.jpg",
         "food/IMG_0384.jpg",

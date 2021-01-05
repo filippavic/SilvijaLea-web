@@ -181,6 +181,8 @@ function FoodPage() {
                             <PortraitRow images={foodPhotos[2]}/>
                             <PortraitRow images={foodPhotos[3]}/>
                             <PortraitRow images={foodPhotos[4]}/>
+                            <PortraitRow images={foodPhotos[5]}/>
+                            <PortraitRow images={foodPhotos[6]}/>
 
                         </SRLWrapper>
                     </div>

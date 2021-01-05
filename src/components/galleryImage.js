@@ -13,7 +13,7 @@ const GalleryImage = (props) => (
               relativePath
               name
               childImageSharp {
-                fluid(quality: 90) {
+                fluid(quality: 88) {
                   ...GatsbyImageSharpFluid_withWebp_noBase64
                 }
               }
