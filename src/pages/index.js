@@ -141,14 +141,14 @@ function IndexPage() {
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://silvijalea.netlify.app/" />
+        <meta property="og:url" content="https://silvijalea.art/" />
         <meta property="og:title" content="Silvija Lea Švaljek" />
         <meta property="og:description" content="Portrait photography (indoor & outdoor), food photography, wedding & couples photography." />
         <meta property="og:image" content={require('../images/web_preview.jpg')} />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://silvijalea.netlify.app/" />
+        <meta property="twitter:url" content="https://silvijalea.art/" />
         <meta property="twitter:title" content="Silvija Lea Švaljek" />
         <meta property="twitter:description" content="Portrait photography (indoor & outdoor), food photography, wedding & couples photography." />
         <meta property="twitter:image" content={require('../images/web_preview.jpg')} />
