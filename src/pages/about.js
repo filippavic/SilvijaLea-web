@@ -4,6 +4,9 @@ import { gsap } from "gsap"
 
 import HeaderAlt from "../components/headerAlt"
 
+import polaroidImageEasterEgg from '../images/silvija_polaroid_easter_egg.jpg'
+import polaroidImage from '../images/silvija_polaroid.jpg'
+
 import "../styles/styles.scss"
 
 function AboutPage() {
@@ -11,6 +14,11 @@ function AboutPage() {
   //easter egg
   const [easterEggOn, setEasterEggOn] = useState(false);
   var counter = 0;
+
+  //calculate age
+  var ageDifMs = Date.now() - (new Date(1998, 10, 17)).getTime();
+  var ageDate = new Date(ageDifMs);
+  var age = Math.abs(ageDate.getUTCFullYear() - 1970);
 
 
   useEffect(() => {
@@ -114,15 +122,15 @@ function AboutPage() {
           <div className="about-content">
               <div className="about-content-left">
                 {easterEggOn ? (
-                  <img src={require('../images/silvija_polaroid_easter_egg.jpg')} alt="A portrait of Silvija on a bridge" draggable="false"/>
+                  <img src={polaroidImageEasterEgg} alt="A portrait of Silvija on a bridge" draggable="false"/>
                 ) : (
-                  <img src={require('../images/silvija_polaroid.jpg')} alt="A portrait of Silvija on a bridge" draggable="false"/>
+                  <img src={polaroidImage} alt="A portrait of Silvija on a bridge" draggable="false"/>
                 )}
               </div>
 
               <div className="about-content-right">
                 <div className={"about-desc" + (easterEggOn ? " easter-egg" : "")}>
-                <p>My name is Silvija Lea and I'm a 22-year-old hobbyist photographer based in Krapina. I love taking pictures of people and food. I hope you enjoy my work - you can also check it out on my social media. <br /><br />I also like beer.</p>
+                <p>My name is Silvija Lea and I'm a {age}-year-old hobbyist photographer based in Krapina. I love taking pictures of people and food. I hope you enjoy my work - you can also check it out on my social media. <br /><br />I also like beer.</p>
                 </div>
 
                 <hr className="solid"></hr>

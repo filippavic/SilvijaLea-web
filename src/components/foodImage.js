@@ -1,22 +1,31 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 
 
 const FoodImage = (props) => {
-  const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "landing_food.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 700, quality: 89) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
+  const data = useStaticQuery(graphql`{
+  placeholderImage: file(relativePath: {eq: "landing_food.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(
+        formats: [AUTO, WEBP, AVIF]
+        width: 700
+        quality: 89
+        layout: CONSTRAINED
+        placeholder: BLURRED
+      )
     }
-  `)
+  }
+}
+`)
 
-  return <Img alt={props.alt} fluid={data.placeholderImage.childImageSharp.fluid} style={{position: "initial"}} imgStyle={{objectPosition: props.objectPosition}}/>
+  return (
+    <GatsbyImage
+      image={data.placeholderImage.childImageSharp.gatsbyImageData}
+      alt={props.alt}
+      style={{position: "initial"}}
+      imgStyle={{objectPosition: props.objectPosition}} />
+  );
 }
 
 export default FoodImage

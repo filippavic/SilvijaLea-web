@@ -10,6 +10,8 @@ import WeddingImage from "../components/weddingImage"
 import Intro from "../components/intro"
 import Header from "../components/header"
 
+import previewImage from '../images/web_preview.jpg'
+
 import "../styles/styles.scss"
 
 function IndexPage() {
@@ -60,7 +62,7 @@ function IndexPage() {
     tl.to(".intro-overlay", 0, {
       css: { display: "none" },
     })
-    .from(".landing-image-cont img", 1.6, {
+    .from(".gatsby-image-wrapper", 1.6, {
       scale: 1.4,
       ease: "expo.inOut",
       delay: -2,
@@ -144,14 +146,14 @@ function IndexPage() {
         <meta property="og:url" content="https://silvijalea.art/" />
         <meta property="og:title" content="Silvija Lea Švaljek" />
         <meta property="og:description" content="Portrait photography (indoor & outdoor), food photography, wedding & couples photography." />
-        <meta property="og:image" content={require('../images/web_preview.jpg')} />
+        <meta property="og:image" content={previewImage} />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://silvijalea.art/" />
         <meta property="twitter:title" content="Silvija Lea Švaljek" />
         <meta property="twitter:description" content="Portrait photography (indoor & outdoor), food photography, wedding & couples photography." />
-        <meta property="twitter:image" content={require('../images/web_preview.jpg')} />
+        <meta property="twitter:image" content={previewImage} />
 
         <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600&display=swap" rel="stylesheet"></link>
       </Helmet>

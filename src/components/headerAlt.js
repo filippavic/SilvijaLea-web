@@ -1,7 +1,8 @@
 import React from "react"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
-import HeaderImage from "./headerImage"
+import signatureImage from '../images/silvija_signature_color.png'
+import signatureImageEasterEgg from '../images/silvija_signature_easter_egg.png'
 
 function HeaderAlt(props) {
 
@@ -13,9 +14,9 @@ function HeaderAlt(props) {
             <AniLink paintDrip direction="left" hex="#88a376" to="/">
               <div className="logo" aria-label="home">
                 {props.easterEggOn ? (
-                  <HeaderImage filename="silvija_signature_easter_egg.png" alt="Silvija Lea" objectPosition="center"/>
+                  <img src={signatureImageEasterEgg} alt="Silvija Lea" draggable="false"/>
                 ) : (
-                  <HeaderImage filename="silvija_signature_color.png" alt="Silvija Lea" objectPosition="center"/>
+                  <img src={signatureImage} alt="Silvija Lea" draggable="false"/>
                 )}
               </div>
             </AniLink>
