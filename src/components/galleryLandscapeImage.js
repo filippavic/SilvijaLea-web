@@ -2,7 +2,7 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-const GalleryImage = props => (
+const GalleryLandscapeImage = props => (
   <StaticQuery
     query={graphql`
       {
@@ -14,10 +14,10 @@ const GalleryImage = props => (
               childImageSharp {
                 gatsbyImageData(
                   formats: [AUTO, WEBP, AVIF]
-                  quality: 61
+                  quality: 62
                   placeholder: NONE
                   layout: CONSTRAINED
-                  width: 300
+                  width: 600
                 )
               }
               publicURL
@@ -48,4 +48,4 @@ const GalleryImage = props => (
   />
 )
 
-export default GalleryImage
+export default GalleryLandscapeImage

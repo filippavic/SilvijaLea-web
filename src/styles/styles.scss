@@ -4,24 +4,23 @@ $grey: #535353;
 $grey-alt: #717171;
 $white: #f1f1f1;
 $ease-in-out-cubic: cubic-bezier(0.145, 0.045, 0.155, 1);
-$ease-in-out-cubic-2: cubic-bezier(0.455, 0.030, 0.000, 0.980);
+$ease-in-out-cubic-2: cubic-bezier(0.455, 0.03, 0, 0.98);
 $cubic-transition: 0.5s $ease-in-out-cubic;
 
 @font-face {
   font-family: "Dalmatins";
   src: url("../fonts/dalmatins-webfont.woff2") format("woff2"),
-       url("../fonts/dalmatins-webfont.woff") format("woff"),
-       url("../fonts/Dalmatins.otf") format("opentype");
+    url("../fonts/dalmatins-webfont.woff") format("woff"),
+    url("../fonts/Dalmatins.otf") format("opentype");
   font-display: swap;
 }
-
 
 html,
 body {
   visibility: hidden;
   font-family: "Manrope", sans-serif;
   font-size: 16px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   scroll-behavior: smooth;
 }
 
@@ -66,132 +65,130 @@ body {
 
 //Header
 header {
+  height: 80px;
+  width: 90%;
+  position: fixed;
+  top: 0px;
+  z-index: 25;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+
+  .inner-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     height: 80px;
-    width: 90%;
-    position: fixed;
-    top: 0px;
-    z-index: 25;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-  
-    .inner-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 80px;
-  
-      .logo {
-        visibility: hidden;
+
+    .logo {
+      visibility: hidden;
+      cursor: pointer;
+      width: 85px;
+
+      img {
+        margin-bottom: 0;
+      }
+    }
+
+    .header-about {
+      visibility: hidden;
+
+      a {
+        text-decoration: none;
+        font-weight: 500;
+        letter-spacing: 1.5px;
+        color: $white;
         cursor: pointer;
-        width: 85px;
+        transition: 0.5s color $ease-in-out-cubic;
+        position: relative;
 
-        img {
-          margin-bottom: 0;
-        }
-      }
-  
-      .header-about {
-        visibility: hidden;
-
-        a {
-          text-decoration: none;
-          font-weight: 500;
-          letter-spacing: 1.5px;
-          color: $white;
-          cursor: pointer;
-          transition: 0.5s color $ease-in-out-cubic;
-          position: relative;
-
-          .alt{
-            color: $grey;
-          }
-  
-          &:before {
-            content: "";
-            position: absolute;
-            width: 0;
-            height: 1px;
-            left: 0;
-            bottom: 0;
-            visibility: hidden;
-            transition: width 0.5s ease, background 0.5s ease;
-          }
-          &:hover {
-            color: $white;
-            transition: 0.5s color $ease-in-out-cubic;
-
-            .alt{
-              color: $accent-color;
-            }
-          }
-          &:hover:before {
-            visibility: visible;
-            background: $white;
-            width: 100%;
-
-            .alt{
-              color: $accent-color;
-            }
-          }
-  
-          &:after {
-            content: "";
-            display: block;
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            width: 0;
-            height: 1px;
-            background: $white;
-            transition: width 0.5s ease;
-
-            .alt{
-              color: $accent-color;
-            }
-          }
-  
-          &:hover:after {
-            background: transparent;
-            width: 100%;
-            transition: all 0s ease;
-          } 
-        } 
-      }
-
-      .header-alt {
-        a {
+        .alt {
           color: $grey;
-          transition: 0.4s color $ease-in-out-cubic;
-  
-          &:hover {
+        }
+
+        &:before {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 1px;
+          left: 0;
+          bottom: 0;
+          visibility: hidden;
+          transition: width 0.5s ease, background 0.5s ease;
+        }
+        &:hover {
+          color: $white;
+          transition: 0.5s color $ease-in-out-cubic;
+
+          .alt {
             color: $accent-color;
           }
+        }
+        &:hover:before {
+          visibility: visible;
+          background: $white;
+          width: 100%;
 
-          &:hover:before {
-            background: $accent-color;
+          .alt {
+            color: $accent-color;
           }
-  
-          &:after {
-            background: $accent-color;
-          }
-        } 
+        }
 
-        &.easter-egg {
-          a {
-            color: #c80004;
-            transition: 0.4s color $ease-in-out-cubic;
+        &:after {
+          content: "";
+          display: block;
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          width: 0;
+          height: 1px;
+          background: $white;
+          transition: width 0.5s ease;
+
+          .alt {
+            color: $accent-color;
           }
+        }
+
+        &:hover:after {
+          background: transparent;
+          width: 100%;
+          transition: all 0s ease;
+        }
+      }
+    }
+
+    .header-alt {
+      a {
+        color: $grey;
+        transition: 0.4s color $ease-in-out-cubic;
+
+        &:hover {
+          color: $accent-color;
+        }
+
+        &:hover:before {
+          background: $accent-color;
+        }
+
+        &:after {
+          background: $accent-color;
+        }
+      }
+
+      &.easter-egg {
+        a {
+          color: #c80004;
+          transition: 0.4s color $ease-in-out-cubic;
         }
       }
     }
   }
-
+}
 
 //Footer
 footer {
-
   .footer-container {
     width: 80%;
     margin-left: auto;
@@ -236,15 +233,13 @@ footer {
             transition: 0.4s color $ease-in-out-cubic;
           }
         }
-        
-      } 
+      }
     }
-  } 
+  }
 }
 
-
 //Intro
-.intro-overlay{
+.intro-overlay {
   width: 100%;
   height: 100vh;
   min-height: 500px;
@@ -258,7 +253,7 @@ footer {
     flex-direction: column;
   }
 
-  .overlay-bar{
+  .overlay-bar {
     flex: 1 1 0px;
     background-color: black;
   }
@@ -288,16 +283,15 @@ footer {
 
 @keyframes letter-animation {
   0% {
-      stroke-dashoffset: 9000;
+    stroke-dashoffset: 9000;
   }
   100% {
-      stroke-dashoffset: 0;
+    stroke-dashoffset: 0;
   }
 }
 
-
 //Landing screen
-.landing{
+.landing {
   width: 100%;
   height: 100vh;
   min-height: 500px;
@@ -309,16 +303,20 @@ footer {
     flex-direction: column;
   }
 
-  .landing-top-shadow{
+  .landing-top-shadow {
     width: 100%;
     height: 30%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 100%);
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
     z-index: 4;
     position: absolute;
     pointer-events: none;
   }
 
-  .landing-text-cont{
+  .landing-text-cont {
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -330,7 +328,7 @@ footer {
     align-items: center;
     pointer-events: none;
 
-    h2{
+    h2 {
       visibility: hidden;
       font-weight: 500;
       font-size: calc(14px + (72 - 14) * ((100vw - 300px) / (1600 - 300)));
@@ -387,7 +385,7 @@ footer {
     }
   }
 
-  .landing-image-cont{
+  .landing-image-cont {
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -405,7 +403,6 @@ footer {
       width: 100%;
       object-fit: cover;
     }
-
   }
 
   .landing-link {
@@ -416,7 +413,7 @@ footer {
     z-index: 20;
   }
 
-  .landing-food-cont{
+  .landing-food-cont {
     flex: 1 1 0px;
     display: flex;
     flex-direction: column;
@@ -425,13 +422,13 @@ footer {
     position: relative;
     cursor: pointer;
 
-    :after{
+    :after {
       content: "";
       display: block;
       height: 100%;
       width: 100%;
       opacity: 0;
-      background: rgba(0,0,0,.5);
+      background: rgba(0, 0, 0, 0.5);
       -moz-transition: 0.5s all $ease-in-out-cubic;
       -webkit-transition: 0.5s all $ease-in-out-cubic;
       transition: 0.5s all $ease-in-out-cubic;
@@ -440,13 +437,12 @@ footer {
       position: absolute;
     }
 
-    :hover:after{
+    :hover:after {
       opacity: 1;
     }
   }
 
-
-  .landing-portraits-cont{
+  .landing-portraits-cont {
     flex: 1 1 0px;
     display: flex;
     flex-direction: column;
@@ -455,13 +451,13 @@ footer {
     position: relative;
     cursor: pointer;
 
-    :after{
+    :after {
       content: "";
       display: block;
       height: 100%;
       width: 100%;
       opacity: 0;
-      background: rgba(0,0,0,.5);
+      background: rgba(0, 0, 0, 0.5);
       -moz-transition: 0.5s all $ease-in-out-cubic;
       -webkit-transition: 0.5s all $ease-in-out-cubic;
       transition: 0.5s all $ease-in-out-cubic;
@@ -470,12 +466,12 @@ footer {
       position: absolute;
     }
 
-    :hover:after{
+    :hover:after {
       opacity: 1;
     }
   }
 
-  .landing-weddings-cont{
+  .landing-weddings-cont {
     flex: 1 1 0px;
     display: flex;
     flex-direction: column;
@@ -484,13 +480,13 @@ footer {
     position: relative;
     cursor: pointer;
 
-    :after{
+    :after {
       content: "";
       display: block;
       height: 100%;
       width: 100%;
       opacity: 0;
-      background: rgba(0,0,0,.5);
+      background: rgba(0, 0, 0, 0.5);
       -moz-transition: 0.5s all $ease-in-out-cubic;
       -webkit-transition: 0.5s all $ease-in-out-cubic;
       transition: 0.5s all $ease-in-out-cubic;
@@ -499,7 +495,7 @@ footer {
       position: absolute;
     }
 
-    :hover:after{
+    :hover:after {
       opacity: 1;
     }
 
@@ -507,11 +503,8 @@ footer {
       object-position: top;
     }
   }
-
-
 }
-  
-  
+
 //About page
 .about {
   width: 100%;
@@ -560,7 +553,7 @@ footer {
       &:before {
         content: "About me";
         font-family: "Dalmatins";
-        color: #9F9F9F;
+        color: #9f9f9f;
         font-size: 0.7em;
         position: absolute;
         z-index: -1;
@@ -576,7 +569,6 @@ footer {
         transition: 0.4s color $ease-in-out-cubic;
       }
     }
-    
   }
 
   .about-content {
@@ -640,7 +632,6 @@ footer {
       }
 
       .about-desc {
-
         p {
           visibility: hidden;
           font-weight: 500;
@@ -678,7 +669,7 @@ footer {
           position: relative;
           width: fit-content;
           margin-bottom: 25px;
-       
+
           &:before {
             content: "";
             position: absolute;
@@ -700,7 +691,7 @@ footer {
             background: $accent-color;
             width: 100%;
           }
-  
+
           &:after {
             content: "";
             display: block;
@@ -712,7 +703,7 @@ footer {
             background: $accent-color;
             transition: width 0.5s ease;
           }
-  
+
           &:hover:after {
             background: transparent;
             width: 100%;
@@ -720,7 +711,7 @@ footer {
           }
 
           &:last-child {
-              margin-bottom: 0;
+            margin-bottom: 0;
           }
         }
 
@@ -744,12 +735,12 @@ footer {
         &.easter-egg {
           a {
             color: #c80004;
-            transition: 0.4s color $ease-in-out-cubic;;
+            transition: 0.4s color $ease-in-out-cubic;
           }
 
           .icon-class {
             color: #c80004;
-            transition: 0.4s color $ease-in-out-cubic;;
+            transition: 0.4s color $ease-in-out-cubic;
           }
         }
       }
@@ -770,7 +761,7 @@ footer {
     cursor: pointer;
     display: block;
     border-radius: 50px;
-    box-shadow: inset  0 0 0 2px rgba(0,0,0,0.2);
+    box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.2);
     z-index: 10000;
     opacity: 0;
     visibility: hidden;
@@ -780,13 +771,13 @@ footer {
 
     &::after {
       position: absolute;
-      font-family: 'Font Awesome 5 Free';
+      font-family: "Font Awesome 5 Free";
       font-weight: 900;
-      content: '\f062';
+      content: "\f062";
       text-align: center;
       line-height: 46px;
       font-size: 15px;
-      color: rgba(0,0,0,0.2);
+      color: rgba(0, 0, 0, 0.2);
       left: 0;
       top: 0;
       height: 46px;
@@ -823,8 +814,6 @@ footer {
     transform: translateY(0);
     transition: all 200ms $ease-in-out-cubic;
   }
-
-
 }
 
 .gallery {
@@ -853,15 +842,15 @@ footer {
     h1 {
       visibility: hidden;
       font-weight: 600;
-      font-size: calc(30px + (72 - 30) * ((100vw - 300px) / (1600 - 300)));
+      font-size: calc(23px + (72 - 23) * ((100vw - 300px) / (1600 - 300)));
       color: $grey-alt;
     }
-    
+
     #food-decoration {
       &:before {
         content: "Food";
         font-family: "Dalmatins";
-        color: #9F9F9F;
+        color: #9f9f9f;
         font-size: 0.9em;
         position: absolute;
         z-index: -1;
@@ -874,7 +863,7 @@ footer {
       &:before {
         content: "Portraits";
         font-family: "Dalmatins";
-        color: #9F9F9F;
+        color: #9f9f9f;
         font-size: 0.9em;
         position: absolute;
         z-index: -1;
@@ -887,7 +876,7 @@ footer {
       &:before {
         content: "Weddings & Couples";
         font-family: "Dalmatins";
-        color: #9F9F9F;
+        color: #9f9f9f;
         font-size: 0.5em;
         position: absolute;
         z-index: -1;
@@ -907,9 +896,7 @@ footer {
     @media (max-width: 768px) {
       padding-top: 0px;
     }
-
   }
-
 }
 
 //Gallery rows
@@ -918,7 +905,7 @@ footer {
   flex-direction: row;
   height: fit-content;
   justify-content: space-between;
-  margin-bottom: calc((100% - (18vw)*4)/4);
+  margin-bottom: calc((100% - (18vw) * 4) / 4);
   flex-wrap: wrap;
 
   @media (min-width: 1555px) {
@@ -928,7 +915,6 @@ footer {
   @media (max-width: 768px) {
     margin-bottom: 0;
   }
-
 
   .portrait-photo {
     flex-grow: 0;
@@ -945,10 +931,13 @@ footer {
       margin: 0;
     }
 
+    @media (width: 768px) {
+      margin-bottom: 20px;
+    }
+
     picture {
       cursor: pointer;
     }
-
   }
 }
 
@@ -958,7 +947,7 @@ footer {
   flex-wrap: wrap;
   height: fit-content;
   justify-content: space-between;
-  margin-bottom: calc((100% - (18vw)*4)/4);
+  margin-bottom: calc((100% - (18vw) * 4) / 4);
 
   @media (min-width: 1555px) {
     margin-bottom: 20px;
@@ -983,11 +972,14 @@ footer {
       margin: 0;
     }
 
+    @media (width: 768px) {
+      margin-bottom: 20px;
+    }
+
     picture {
       cursor: pointer;
     }
   }
-
 }
 
 //404 page
@@ -1043,7 +1035,6 @@ footer {
       &:hover {
         color: $accent-color;
         transition: 0.5s color $ease-in-out-cubic;
-
       }
       &:hover:before {
         visibility: visible;
@@ -1067,7 +1058,7 @@ footer {
         background: transparent;
         width: 100%;
         transition: all 0s ease;
-      } 
-    } 
+      }
+    }
   }
 }
