@@ -14,7 +14,15 @@ module.exports = {
       },
     },
     `gatsby-plugin-image`,
-    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: [`auto`, `webp`],
+          breakpoints: [750, 1920],
+        },
+      },
+    },
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-transition-link`,
