@@ -13,7 +13,7 @@ const GalleryImage = props => (
               name
               childImageSharp {
                 gatsbyImageData(
-                  formats: [AUTO, WEBP, AVIF]
+                  formats: [AUTO, WEBP]
                   quality: 61
                   placeholder: NONE
                   layout: CONSTRAINED

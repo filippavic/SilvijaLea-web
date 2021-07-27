@@ -13,7 +13,7 @@ const GalleryLandscapeImage = props => (
               name
               childImageSharp {
                 gatsbyImageData(
-                  formats: [AUTO, WEBP, AVIF]
+                  formats: [AUTO, WEBP]
                   quality: 62
                   placeholder: NONE
                   layout: CONSTRAINED
